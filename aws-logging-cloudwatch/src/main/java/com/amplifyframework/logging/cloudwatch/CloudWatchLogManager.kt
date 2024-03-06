@@ -117,7 +117,7 @@ internal class CloudWatchLogManager(
                         if (queriedEvents.isEmpty()) break
                         while (queriedEvents.isNotEmpty()) {
                             val groupName = pluginConfiguration.logGroupName
-                            val streamName = "$todayDate.${uniqueDeviceId()}.${userIdentityId ?: "guest"}"
+                            val streamName = pluginConfiguration.logStreamName ?: "$todayDate.${uniqueDeviceId()}.${userIdentityId ?: "guest"}"
                             val nextBatch = getNextBatch(queriedEvents)
                             val inputLogEvents = nextBatch.first
                             inputLogEventsIdToBeDeleted = nextBatch.second

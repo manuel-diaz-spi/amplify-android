@@ -27,7 +27,8 @@ data class AWSCloudWatchLoggingPluginConfiguration @JvmOverloads constructor(
     val localStoreMaxSizeInMB: Int = 5,
     val flushIntervalInSeconds: Int = 60,
     val defaultRemoteConfiguration: DefaultRemoteConfiguration? = null,
-    val loggingConstraints: LoggingConstraints = LoggingConstraints()
+    val loggingConstraints: LoggingConstraints = LoggingConstraints(),
+    val logStreamName: String? = null
 )
 
 /**
